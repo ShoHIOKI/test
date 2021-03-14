@@ -26,32 +26,52 @@ class MyTodoApp extends StatelessWidget {
 
 // リスト一覧画面用Widget
 class TodoListPage extends StatelessWidget {
+  final String testButton = 'test';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('リスト一覧'),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
-          Card(
-            child: ListTile(
-              title: Text('にんじんを買う'),
+          Container(
+            height: 200,
+            child: Expanded(
+              child: ListView(
+                children: <Widget>[
+                  Card(
+                    child: ListTile(
+                      title: Text('にんじんを買う'),
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      title: Text('玉ねぎを買う'),
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      title: Text('じゃがいもを買う'),
+                    ),
+                  ),
+                  Card(
+                    child: ListTile(
+                      title: Text('カレールーを買う'),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text('玉ねぎを買う'),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: Text('じゃがいもを買う'),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: Text('カレールーを買う'),
+          Container(
+            //横幅いっぱいに広げる
+            width: double.infinity,
+            //リスト追加ボタン
+            child: RaisedButton(
+              color: Colors.blue,
+              onPressed: (){},
+              child: Text(testButton,style: TextStyle(color: Colors.white)),
             ),
           ),
         ],
