@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';  //レイアウト構成確認用パッケージ
 
 void main() {
+  debugPaintSizeEnabled = true; //レイアウト構成確認用
   // 最初に表示するWidget
   runApp(MyTodoApp());
 }
@@ -33,48 +35,51 @@ class TodoListPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('リスト一覧'),
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            height: 200,
-            child: Expanded(  //Column内にListView入れるとエラー出るのでExpandedでListViewを囲う
-              child: ListView(
-                children: <Widget>[
-                  Card(
-                    child: ListTile(
-                      title: Text('にんじんを買う'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: 200,
+              child: Expanded(  //Column内にListView入れるとエラー出るのでExpandedでListViewを囲う
+                child: ListView(
+                  children: <Widget>[
+                    Card(
+                      child: ListTile(
+                        title: Text('にんじんを買う'),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      title: Text('玉ねぎを買う'),
+                    Card(
+                      child: ListTile(
+                        title: Text('玉ねぎを買う'),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      title: Text('じゃがいもを買う'),
+                    Card(
+                      child: ListTile(
+                        title: Text('じゃがいもを買う'),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: ListTile(
-                      title: Text('カレールーを買う'),
+                    Card(
+                      child: ListTile(
+                        title: Text('カレールーを買う'),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          Container(
-            //横幅いっぱいに広げる
-            width: double.infinity,
-            //リスト追加ボタン
-            child: RaisedButton(
-              color: Colors.blue,
-              onPressed: (){},
-              child: Text(testButton,style: TextStyle(color: Colors.white)),
+            Container(
+              //横幅いっぱいに広げる
+              width: double.infinity,
+              //リスト追加ボタン
+              child: RaisedButton(
+                color: Colors.blue,
+                onPressed: (){},
+                child: Text(testButton,style: TextStyle(color: Colors.white)),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
