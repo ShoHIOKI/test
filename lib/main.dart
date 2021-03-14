@@ -37,7 +37,7 @@ class TodoListPage extends StatelessWidget {
         children: <Widget>[
           Container(
             height: 200,
-            child: Expanded(
+            child: Expanded(  //Column内にListView入れるとエラー出るのでExpandedでListViewを囲う
               child: ListView(
                 children: <Widget>[
                   Card(
