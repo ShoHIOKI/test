@@ -78,7 +78,7 @@ class TodoAddPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('リスト追加'),
+        title: Text('リストに追加'),
       ),
       body: Container(
         //余白をつける
@@ -95,7 +95,7 @@ class TodoAddPage extends StatelessWidget {
               child: RaisedButton(
                 color: Colors.blue,
                 onPressed: (){},
-                child: Text('リスト追加',style: TextStyle(color: Colors.white)),
+                child: Text('リストに追加',style: TextStyle(color: Colors.white)),
               ),
             ),
             Container(
